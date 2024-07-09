@@ -1,0 +1,1 @@
+# myncraft.js
