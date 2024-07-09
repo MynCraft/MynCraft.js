@@ -1,0 +1,53 @@
+{
+  "name": "myncraftjs",
+  "version": "1.0.0",
+  "description": "mineflayer based minecraft bot package",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/typings/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "types": "./dist/typings/index.d.ts",
+    "require": "./dist/cjs/index.js"
+  },
+  "scripts": {
+    "build": "echo 'Build started'&&npx tsc&&npx tsc -p tsconfig.esm.json&&echo 'Build finished'",
+    "start": "clear&&cd src &&ts-node ./index.ts",
+    "dev": "nodemon --watch ./src -e ts --exec 'npm run start' "
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeneSatka/myncraftjs.git"
+  },
+  "keywords": [
+    "mineflayer",
+    "minecraft",
+    "myncraftjs",
+    "mcbot",
+    "minecraftbot",
+    "mineflayerjs",
+    "senesatka"
+  ],
+  "author": {
+    "email": "senesatka@gmail.com",
+    "name": "SeneSatka"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeneSatka/myncraft.js/issues"
+  },
+  "homepage": "https://github.com/SeneSatka/myncraft.js#readme",
+  "dependencies": {
+    "@chocolatemilkdev/emitter": "^1.0.7",
+    "mineflayer": "^4.20.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  }
+}
