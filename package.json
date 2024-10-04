@@ -5,22 +5,17 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/typings/index.d.ts",
-  "exports": {
-    "import": "./dist/esm/index.js",
-    "types": "./dist/typings/index.d.ts",
-    "require": "./dist/cjs/index.js"
-  },
   "scripts": {
-    "build": "echo 'Build started'&&npx tsc&&npx tsc -p tsconfig.esm.json&&echo 'Build finished'",
-    "start": "clear&&cd src &&ts-node ./index.ts",
-    "dev": "nodemon --watch ./src -e ts --exec 'npm run start' "
+    "dev": "nodemon --watch ./src -e ts --exec 'npm run test' ",
+    "test": "clear&&cd src&&node --no-warnings=ExperimentalWarning --loader ts-node/esm test.ts",
+    "build": "tsc --project tsconfig.json & tsc --project tsconfig.mjs.json "
   },
   "engines": {
     "node": ">=18"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SeneSatka/myncraft.js.git"
+    "url": "git+https://github.com/MynCraft/MynCraft.js.git"
   },
   "keywords": [
     "mineflayer",
@@ -37,17 +32,21 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SeneSatka/myncraft.js/issues"
+    "url": "https://github.com/MynCraft/MynCraft.js/issues"
   },
-  "homepage": "https://github.com/SeneSatka/myncraft.js#readme",
+  "homepage": "https://github.com/MynCraft/MynCraft.js#readme",
   "dependencies": {
-    "@chocolatemilkdev/emitter": "^1.0.7",
-    "mineflayer": "^4.20.1"
+    "@myncraftjs/logger": "^0.0.4",
+    "minecraft-data": "^3.69.0",
+    "minecraft-protocol": "^1.47.0",
+    "prismarine-nbt": "^2.5.0",
+    "prismarine-registry": "^1.7.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
+    "typed-emitter": "^2.1.0",
     "typescript": "^5.5.3"
   }
 }
